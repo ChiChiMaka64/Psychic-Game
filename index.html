@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>The Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script href="assets/javascript/game.js"></script>
+</head>
+<body>
+        <h1>The Psychic Game</h1>
+        <h2>Guess what letter I'm Thinking Of</h2>
+        <h3 id="wins">Wins:</h3>
+        <h3 id="loses">Losses:</h3>
+        <h3 id="guessesLeft">Guesses Left:</h3>
+        <h3 id="totalGuessesSoFar">Total Guesses So Far:</h3> 
+
+     <img src="assets/images/spiral.jpg">
+  
+    <script type ="text/javascript">
+    
+        var wins =0;
+        var loses=0;
+        var guessesLeft= 10;
+        var totalGuessesSoFar=0;
+
+    
+
+    var ComputerChoices=[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v","w", "x", "y", "z"];
+    var ComputerLetter=ComputerChoices[Math.floor(Math.random() * ComputerChoices.length)];
+    console.log(ComputerLetter);
+    document.onkeyup = function(event) {
+       var UserGuess = event.key;
+        // document.getElementById("totalGuessesSoFar")
+        if (guessesLeft === 0) {
+            alert ("No More Guesses!");
+            return;
+        }
+        
+        guessesLeft--; 
+        if (UserGuess===ComputerLetter) {
+            wins++;
+        }
+        else {
+            loses++;
+        }
+        
+         
+        document.getElementById("wins").textContent="Wins: " + wins;
+        document.getElementById("loses").textContent="Losses: " + loses;
+        document.getElementById("guessesLeft").textContent="Guesses Left: " + guessesLeft;
+        // document.getElementById("totalGuessesSoFar").textContent="totalGuessesSoFar" + totalGuessesSoFar;   
+     
+
+        
+
+    };
+
+ </script>
+    
+</body>
+</html>
