@@ -1,4 +1,4 @@
-<script type ="text/javascript">
+
 var wins =0;
         var loses=0;
         var guessesLeft= 10;
@@ -15,16 +15,14 @@ var wins =0;
        document.getElementById("totalGuessesSoFar").appendChild(textnode);
         if (guessesLeft === 0) {
             alert ("No More Guesses!");
-            return;
+            loses++;
         }
         
         guessesLeft--; 
         if (UserGuess===ComputerLetter) {
             wins++;
         }
-        else {
-            loses++;
-        }
+       
         
          
         document.getElementById("wins").textContent="Wins: " + wins;
@@ -32,5 +30,3 @@ var wins =0;
         document.getElementById("guessesLeft").textContent="Guesses Left: " + guessesLeft;
         
        
-        
-</script>
