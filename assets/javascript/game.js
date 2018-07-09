@@ -16,11 +16,13 @@ var wins =0;
         if (guessesLeft === 0) {
             alert ("No More Guesses!");
             loses++;
+            location.reload()
         }
         
         guessesLeft--; 
         if (UserGuess===ComputerLetter) {
             wins++;
+            location.reload()
         }
        
         
@@ -28,5 +30,7 @@ var wins =0;
         document.getElementById("wins").textContent="Wins: " + wins;
         document.getElementById("loses").textContent="Losses: " + loses;
         document.getElementById("guessesLeft").textContent="Guesses Left: " + guessesLeft;
-        
+       
+        location.reload();
+    };
        

@@ -35,7 +35,8 @@
        document.getElementById("totalGuessesSoFar").appendChild(textnode);
         if (guessesLeft === 0) {
             alert ("No More Guesses!");
-            return;
+            location.reload();
+            
         }
         
         guessesLeft--; 
@@ -45,14 +46,15 @@
         else {
             loses++;
         }
-        
+
+    
          
         document.getElementById("wins").textContent="Wins: " + wins;
         document.getElementById("loses").textContent="Losses: " + loses;
         document.getElementById("guessesLeft").textContent="Guesses Left: " + guessesLeft;
         
-     
 
+    
         
 
     };
