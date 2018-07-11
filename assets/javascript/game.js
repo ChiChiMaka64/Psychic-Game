@@ -15,15 +15,16 @@ var wins =0;
        document.getElementById("totalGuessesSoFar").appendChild(textnode);
         if (guessesLeft === 0) {
             alert ("No More Guesses!");
-            loses++;
             location.reload()
         }
         
         guessesLeft--; 
         if (UserGuess===ComputerLetter) {
             wins++;
-            location.reload()
         }
+        else if (UserGuess!=ComputerLetter)
+            loses++;
+        
        
         
          
