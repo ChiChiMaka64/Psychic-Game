@@ -14,7 +14,10 @@ var wins =0;
        var textnode = document.createTextNode(UserGuess);
        document.getElementById("totalGuessesSoFar").appendChild(textnode);
         if (guessesLeft === 0) {
+        if (UserGuess!=ComputerLetter) {
             alert ("No More Guesses!");
+            loses++;
+        }
             location.reload()
         }
         
@@ -22,8 +25,8 @@ var wins =0;
         if (UserGuess===ComputerLetter) {
             wins++;
         }
-        else if (UserGuess!=ComputerLetter)
-            loses++;
+        
+            
         
        
         

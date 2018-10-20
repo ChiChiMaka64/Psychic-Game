@@ -13,7 +13,7 @@
         <h3 id="wins">Wins:</h3>
         <h3 id="loses">Losses:</h3>
         <h3 id="guessesLeft">Guesses Left:</h3>
-        <h3 id="totalGuessesSoFar">Total Guesses So Far:</h3> 
+        <h3>Total Guesses So Far:<span id="totalGuessesSoFar"></span></h3> 
 
      <img src="assets/images/spiral.jpg">
   
@@ -30,22 +30,29 @@
     var ComputerLetter=ComputerChoices[Math.floor(Math.random() * ComputerChoices.length)];
     console.log(ComputerLetter);
     document.onkeyup = function(event) {
+        guessesLeft--;
        var UserGuess = event.key;
        var textnode = document.createTextNode(UserGuess);
        document.getElementById("totalGuessesSoFar").appendChild(textnode);
         if (guessesLeft === 0) {
             alert ("No More Guesses!");
-            location.reload();
+            loses++;
+            guessesLeft=10;
+            ComputerLetter=ComputerChoices[Math.floor(Math.random() * ComputerChoices.length)];
+            document.getElementById("totalGuessesSoFar").textContent=" ";
             
         }
         
-        guessesLeft--; 
+         
         if (UserGuess===ComputerLetter) {
             wins++;
+            alert ("You Win!");
+            guessesLeft=10;
+            ComputerLetter=ComputerChoices[Math.floor(Math.random() * ComputerChoices.length)];
+            document.getElementById("totalGuessesSoFar").textContent=" ";
+            
         }
-        else {
-            loses++;
-        }
+        
 
     
          
